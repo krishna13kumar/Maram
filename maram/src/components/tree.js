@@ -8,6 +8,9 @@ import ReactFlow, { Controls,
 import { useState, useCallback, useEffect } from 'react';
 import 'reactflow/dist/style.css';
 import StyledNode from './styledNode';
+import background from '../asset/meric-dagli-7NBO76G5JsE-unsplash.jpg'
+import background1 from '../asset/aron-visuals-bZZp1PmHI0E1-unsplash.jpg'
+import background2 from '../asset/istockphoto-1026139608-1024x1024.jpg'
 
 // relation mapping
 const edges = [{ id: '1-2', source: '1', target: '2', label: 'to the', type: 'step' }];
@@ -40,7 +43,18 @@ function Flow() {
         setViewport({ x: 0, y: 0, zoom: 1 }, { duration: 1000 });
     },[])
   return (
-    <div style={{ height: '100vh', width:"100vw" }}>
+    <div 
+    style={{ height: '100vh', width:"100vw", 
+    // backgroundImage:`url(${background2})`,backgroundRepeat:"round"
+  }} 
+    // className="demo-wrap"
+    >
+{/* custom background */}
+      {/* <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div> */}
       <ReactFlow nodes={nodes} edges={edges}
         onNodesChange={onNodesChange}
         nodeTypes={{avatar: StyledNode}} // refers to the node style, add new attribute for different node styling
